@@ -1,0 +1,223 @@
+/* Normalisation supplémentaire 
+=============================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles de base
+=============================================== */
+html {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%; /* Éviter la barre de défilement horizontale */
+    /* Ajustement de la taille de base du texte à la racine du document */
+    font-size: clamp(0.875rem, 0.75rem + 0.75vw, 1.375rem);
+}
+
+
+/* Mise en page pour les petits périphériques
+=============================================== */
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0rem;
+    max-width: 100%;
+    height: 100%;
+    /* Affichage flex des enfants en colonne*/
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    /* Affichage flex des enfants en colonne*/
+    display: flex;
+    flex-direction: column;
+
+    /* Un peu de padding à gauche pour les enfants de l'entête mais *pas* pour l'image */
+    & > *:not(picture) {
+        padding-left: 2.5vw;
+    }
+
+    h1 {
+        text-shadow: 1px 1px 2px #aaa;
+        margin: 0.67rem 0;
+    }
+
+    .infos {
+        /* [À compléter : étape 1] */
+        /* Attention: cet élément est un *conteneur* flex ET aussi un *élément* flex. */
+        /* Affichage flex des enfants en rangée centré verticalement. */
+        
+        
+        & > div {
+            /* [À compléter : étape 1] */
+            /* 
+                Tous ces items flex peuvent s'étirer, mais pas rétrécir. 
+                Leur taille n'est pas prise en compte dans le 
+                calcul de l'espace restant... 
+            */
+
+
+        }
+
+        & > div:first-child {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    picture {
+        width: 100vw;
+        /* 
+            La propriété qui suit est importante pour les 2 raisons suivantes : 
+                1) ne pas avoir de barre de défilement horizontale ; 
+                2) garder l'image centrée. 
+        */
+        max-width: min(100%, 1920px); /* On veut que l'image couvre la largeur entière du viewport, mais pas plus que 1920px (largeur réelle de notre plus grande image) */
+        margin: 0 auto; /* L'image sera centrée lorsque le viewport dépasse 1920px en largeur */
+        
+        img {
+            width: 100%;
+        }
+    }
+}
+
+main {
+    width: 100%;
+    /* Contexte flex pour ses enfants en colonne */
+    display: flex;
+    flex-direction: column;
+
+    section {
+        /* Affichage flex des enfants en rangée */
+        display: flex;
+        /* Centrer les enfants verticalement */
+        align-items: center;
+        padding-left: 2.5vw;
+        padding-right: 2.5vw;
+        margin-top: 1rem;
+        border-top: 1px solid darkgrey;
+        border-bottom: 1px solid darkgrey;
+        /* Tous les enfants des sections sauf le H3 */
+        & > *:not(h3) {
+            text-align: right;
+        }
+
+        /* [À compléter : étape 1] */
+        /* 
+            Tous les enfants de section ont un flex-basis du tiers de la largeur de leur conteneur parent. 
+            Ils ne peuvent ni s'étirer, ni rétrécir... 
+            >>>>> (Attention : il faut écrire la règle CSS au complet, c'est à dire le bon sélecteur et la bonne déclaration de flex) <<<<<
+        */
+
+
+        /* [À compléter : étape 4] */
+        /* Effet de survol */
+
+
+        /* [À compléter : étape 4] */
+        /* Transition */
+
+
+    }
+
+
+}
+
+/* Styles pour les écrans plus larges
+=============================================== */
+
+/* Requête média pour les écrans de "taille moyenne" */
+@media screen and (min-width: 600px) {
+    section > .icone {
+        text-align: center;
+    }
+
+    .icone img {
+        width: 5rem;
+        /* Corrige les icones SVG (toutes) qui ont une empreinte trop grande pour leur contenu */
+        margin: -0.4rem 0;
+    }
+
+    /* [À compléter : étape 2] */
+    /* Les 2 enfants de .temperature sont affichés en rangée */
+    
+
+    /* [À compléter : étape 2] */
+    /* le contenu de .degre a un padding gauche de 0.5 rem */
+    
+}
+
+
+/* Requête média pour les écrans de "grande taille" */
+@media screen and (min-width: 1200px) {
+    .icone img {
+        width: 6rem;
+        /* Corrige les icones SVG (toutes) qui ont une empreinte trop grande pour leur contenu */    
+        margin: -1rem 0;
+    }
+
+    
+    section
+
+
+    main {
+        /* [À compléter : étape 2] */
+        /* Le conteneur "main" affiche ses enfants en rangée et avec un espacement entre chacun. */
+        /* En hauteur, il s'étire pour prendre tout l'espace restant */
+        
+
+        section {
+            padding: 0;
+            
+            /* Corrige les icones SVG (celle dans le tableau des températures) qui ont une empreinte trop grande pour leur contenu */
+            .icone img {
+                margin-top: -2rem;
+            }
+
+            /* [À compléter : étape 2] */
+            /* En tant que conteneur flex chaque section a désormais ses éléments en colonne. */
+            /* En tant qu'élément flex, chaque section doit pouvoir s'étirer ou rétrécir. */
+            /* Les bordures de chaque section en haut et en bas sont remplacées par une bordure à droite. */
+            
+
+
+            /* [À compléter : étape 2] */
+            /* Mais la dernière section n'a pas cette bordure à droite. */
+
+        }
+    }
+
+    
+    /* [À compléter : étape 2] */
+    /*
+        On ajoute une bordure grise en bas de l'élément de la classe .infos 
+        et l'espace est répartie *entre* ses items flex 
+    */
+
+
+}
+
+
+/* Classes CSS diverses.
+=============================================== */
+.maximum,
+.minimum {
+    font-weight: bold;
+}
+
+.minimum {
+    color: darkgrey;
+}
+
+/* Pseudo-élément servant à 'décorer' les températures avec le symbole de 'degré' */
+.degre::after {
+    content: "\0000B0";
+}
+
+/* Images SVG des icônes représentants les conditions météo */
+.icone img {
+    display: inline-block;
+    width: 4.5rem;
+}

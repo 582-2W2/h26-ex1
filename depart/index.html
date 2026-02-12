@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TIM-2W2 - Exercice #1</title>
+	<link rel="icon" type="image/png" href="favicon.png" sizes="all">
+
+	<!-- Intégration de la police de caractères Web -->
+	<!-- Polices Google Roboto/Roboto Slab -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    
+	<!-- Intégration des styles -->
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+		<h1>Montréal, QC</h1>
+		<p>Jeudi 12 février</p>
+		<p>Ensoleillé</p>
+		<div class="infos">
+			<div>
+				<div class="icone"><img src="images/pictos-meteo/ensoleille.svg" alt="Ensoleillé"></div>
+				<h1 class="degre">-6</h1>
+			</div>
+			<div>
+				<p>Précipitations : 0% <br> Humidité : 71% <br>Vents: 10 km/h N.O.</p>
+			</div>
+		</div>
+		<!-- 
+			[À compléter : étape 3] 
+			Ajoutez ici l'élément <picture> pour adapter l'image aux deux points d'arrêts
+			de viewport ciblés (et le défaut sur mobile). 
+		-->
+		<img src="images/montreal-petit.jpg" alt="Photo de Montréal ce matin accompagnant les données météo.">
+	</header>
+	
+	<main>
+		<section>
+			<h3>Aujourd'hui</h3>
+			<div class="icone"><img src="images/pictos-meteo/ensoleille.svg" alt="Ensoleillé"></div>
+			<div class="temperature">
+				<div class="degre maximum">-4</div>
+				<div class="degre minimum">-12</div>
+			</div>
+		</section>
+
+		<section>
+			<h3>Vendredi</h3>
+			<div class="icone"><img src="images/pictos-meteo/ens-nuageux.svg" alt="Partiellement nuageux"></div>
+			<div class="temperature">
+				<div class="degre maximum">-6</div>
+				<div class="degre minimum">-13</div>
+			</div>
+		</section>
+
+		<section>
+			<h3>Samedi</h3>
+			<div class="icone"><img src="images/pictos-meteo/ens-nuageux.svg" alt="Partiellement nuageux"></div>
+			<div class="temperature">
+				<div class="degre maximum">-2</div>
+				<div class="degre minimum">-13</div>
+			</div>
+		</section>
+
+		<section>
+			<h3>Dimanche</h3>
+			<div class="icone"><img src="images/pictos-meteo/ens-nuageux.svg" alt="Partiellement nuageux"></div>
+			<div class="temperature">
+				<div class="degre maximum">-5</div>
+				<div class="degre minimum">-17</div>
+			</div>
+		</section>
+
+		<section>
+			<h3>Lundi</h3>
+			<div class="icone"><img src="images/pictos-meteo/neige.svg" alt="Neige"></div>
+			<div class="temperature">
+				<div class="degre maximum">2</div>
+				<div class="degre minimum">-7</div>
+			</div>
+		</section>
+
+		<section>
+			<h3>Mardi</h3>
+			<div class="icone"><img src="images/pictos-meteo/nuageux.svg" alt="Nuageux"></div>
+			<div class="temperature">
+				<div class="degre maximum">3</div>
+				<div class="degre minimum">-2</div>
+			</div>
+		</section>
+
+		<section>
+			<h3>Mercredi</h3>
+			<div class="icone"><img src="images/pictos-meteo/neige.svg" alt="Neige"></div>
+			<div class="temperature">
+				<div class="degre maximum">1</div>
+				<div class="degre minimum">-4</div>
+			</div>
+		</section>
+	</main>
+</body>
+
+</html>
